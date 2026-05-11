@@ -1,19 +1,17 @@
 # Acceptance Criteria
 
 ## Task 1: Implement the image processing engine
+(Completed - 14/14 criteria met)
+
+## Task 2: Add focal point support for smart cropping
 
 ### Acceptance Criteria
-- [ ] Engine can load an image from bytes (JPEG, PNG, GIF, WebP formats)
-- [ ] Engine can return image dimensions (width, height) as a size property
-- [ ] Engine can resize an image to specified width and height
-- [ ] Engine can crop an image given left, top, right, bottom coordinates
-- [ ] Engine can flip an image horizontally
-- [ ] Engine can flip an image vertically
-- [ ] Engine can rotate an image by 90, 180, or 270 degrees
-- [ ] Engine can output image bytes in JPEG format with configurable quality
-- [ ] Engine can output image bytes in PNG format
-- [ ] Engine can output image bytes in WebP format
-- [ ] Engine can output image bytes in GIF format
-- [ ] Engine can convert image mode to RGB/RGBA as needed for output
-- [ ] Engine properly handles images with alpha channels (transparency)
-- [ ] Engine raises appropriate errors for invalid/corrupted image data
+- [ ] FocalPoint can be created with x, y coordinates and optional width, height, weight
+- [ ] FocalPoint can compute center coordinates from a bounding box (from_square)
+- [ ] FocalPoint can compute coordinates from alignment strings like "left", "center", "right" for horizontal and "top", "middle", "bottom" for vertical
+- [ ] FocalPoint can serialize to a dictionary with all properties
+- [ ] FocalPoint can deserialize from a dictionary
+- [ ] Calculate center of mass from multiple weighted focal points
+- [ ] Given a list of focal points and target dimensions, calculate optimal crop coordinates that preserve focal areas
+- [ ] Support default alignment-based focal point when no explicit points are provided
+- [ ] FocalPoint has a string representation for debugging
