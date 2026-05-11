@@ -1,24 +1,19 @@
 # Acceptance Criteria
 
-## Task 1: Implement the image processing engine
-(Completed - 14/14 criteria met)
+## Task 1-3: (Completed)
 
-## Task 2: Add focal point support for smart cropping
-(Completed - 9/9 criteria met)
-
-## Task 3: Add request parameter handling
+## Task 4: Add URL parsing to extract transformation parameters
 
 ### Acceptance Criteria
-- [ ] RequestParams stores image width and height (int or "orig" for original)
-- [ ] RequestParams stores crop coordinates (left, top, right, bottom)
-- [ ] RequestParams stores fit_in mode for fit-within-box resizing
-- [ ] RequestParams stores horizontal_flip and vertical_flip booleans
-- [ ] RequestParams stores halign ("left", "center", "right") and valign ("top", "middle", "bottom")
-- [ ] RequestParams stores smart mode boolean for AI-based cropping
-- [ ] RequestParams stores quality setting (1-100)
-- [ ] RequestParams stores filter string (e.g., "blur(5):brightness(-10)")
-- [ ] RequestParams stores image_url for the source image
-- [ ] RequestParams computes should_crop boolean based on crop coordinates
-- [ ] RequestParams stores focal_points list
-- [ ] RequestParams supports "unsafe" mode flag
-- [ ] RequestParams handles adaptive mode that swaps dimensions based on image orientation
+- [ ] Parse URL path /unsafe/300x200/http://example.com/image.jpg to extract dimensions and image URL
+- [ ] Parse fit-in mode from URL /unsafe/fit-in/300x200/image.jpg
+- [ ] Parse smart mode from URL /unsafe/300x200/smart/image.jpg
+- [ ] Parse crop coordinates from URL /unsafe/10x20:90x80/300x200/image.jpg
+- [ ] Parse horizontal flip from -300x200 (negative width)
+- [ ] Parse vertical flip from 300x-200 (negative height)
+- [ ] Parse alignment from URL /unsafe/300x200/left/top/image.jpg
+- [ ] Parse filters from URL /unsafe/filters:blur(5):grayscale()/image.jpg
+- [ ] Parse hash signature from URL /HASH/300x200/image.jpg
+- [ ] Handle URL-encoded image URLs
+- [ ] Build regex pattern that matches valid image processing URLs
+- [ ] Return RequestParams object with all extracted values
