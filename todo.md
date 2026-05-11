@@ -5,8 +5,8 @@ Build the image service from user-facing features down. Start with basic image o
 
 ## Tasks
 - [x] Task 1: Implement the image processing engine that can load images from bytes, resize, crop, flip, rotate, and output to various formats (JPEG, PNG, WebP, GIF). Users should be able to load an image buffer, perform transformations, and get the result as bytes.
-- [>] Task 2: Add focal point support for smart cropping. Users can define focal points with coordinates, dimensions, and weights. When cropping, the engine should calculate the center of mass from focal points and crop to preserve important areas.
-- [ ] Task 3: Add request parameter handling that parses image transformation options including width, height, crop coordinates, fit-in mode, flip options, alignment, quality, filters, and smart mode settings.
+- [x] Task 2: Add focal point support for smart cropping. Users can define focal points with coordinates, dimensions, and weights. When cropping, the engine should calculate the center of mass from focal points and crop to preserve important areas.
+- [>] Task 3: Add request parameter handling that parses image transformation options including width, height, crop coordinates, fit-in mode, flip options, alignment, quality, filters, and smart mode settings.
 - [ ] Task 4: Add URL parsing to extract transformation parameters from URL paths. URLs follow a pattern like /unsafe/300x200/smart/filters:blur(5)/http://example.com/image.jpg where dimensions, options, filters, and image URL are parsed from the path.
 - [ ] Task 5: Add the image transformation coordinator that takes request parameters and applies operations to an image engine in the correct order: manual crop first, then calculate dimensions, adjust focal points, auto-crop if needed, resize, and flip.
 - [ ] Task 6: Add the filter system with base filter class and decorator. Filters accept parameters from URLs (like blur(5) or brightness(-20)) and modify image data. Include blur, brightness, contrast, grayscale, quality, rotate, and format filters.
