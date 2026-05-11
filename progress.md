@@ -22,3 +22,10 @@
 **Commit**: Add request parameter handling for image transformations
 **Acceptance**: 13/13 criteria met
 **Verification**: tests FAIL on previous state (ModuleNotFoundError), PASS on current state
+
+## Round 4
+**Task**: Task 4 — Add URL parsing
+**Files created**: imgsvc/url_parser.py, tests/test_url_parser.py
+**Commit**: Add URL parsing to extract transformation parameters from request paths
+**Acceptance**: 12/12 criteria met
+**Verification**: tests FAIL on previous state (ModuleNotFoundError), PASS on current state

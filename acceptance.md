@@ -1,19 +1,18 @@
 # Acceptance Criteria
 
-## Task 1-3: (Completed)
+## Tasks 1-4: (Completed)
 
-## Task 4: Add URL parsing to extract transformation parameters
+## Task 5: Add the image transformation coordinator
 
 ### Acceptance Criteria
-- [ ] Parse URL path /unsafe/300x200/http://example.com/image.jpg to extract dimensions and image URL
-- [ ] Parse fit-in mode from URL /unsafe/fit-in/300x200/image.jpg
-- [ ] Parse smart mode from URL /unsafe/300x200/smart/image.jpg
-- [ ] Parse crop coordinates from URL /unsafe/10x20:90x80/300x200/image.jpg
-- [ ] Parse horizontal flip from -300x200 (negative width)
-- [ ] Parse vertical flip from 300x-200 (negative height)
-- [ ] Parse alignment from URL /unsafe/300x200/left/top/image.jpg
-- [ ] Parse filters from URL /unsafe/filters:blur(5):grayscale()/image.jpg
-- [ ] Parse hash signature from URL /HASH/300x200/image.jpg
-- [ ] Handle URL-encoded image URLs
-- [ ] Build regex pattern that matches valid image processing URLs
-- [ ] Return RequestParams object with all extracted values
+- [ ] Transformer takes an engine and request parameters
+- [ ] Apply manual crop first if coordinates are provided
+- [ ] Calculate target dimensions based on request width/height or original
+- [ ] Adjust focal points relative to crop region if manual crop was applied
+- [ ] Create default focal point from alignment if no explicit focal points
+- [ ] Auto-crop to achieve target aspect ratio while preserving focal points
+- [ ] Resize image to target dimensions after cropping
+- [ ] Apply horizontal and vertical flips if requested
+- [ ] Support fit-in mode that scales to fit within box without cropping
+- [ ] Support full-fit-in mode that scales to fill the box
+- [ ] Handle "orig" dimensions to preserve original size on that axis
